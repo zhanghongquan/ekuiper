@@ -79,11 +79,11 @@ build(){
             CGO_CFLAGS=-I/tmp/tensorflow CGO_LDFLAGS=-L$(pwd)/extensions/functions/tfLite/lib go build -trimpath --buildmode=plugin -o extensions/functions/tfLite/tfLite@$VERSION.so extensions/functions/tfLite/*.go
             ;;
         * )
-            go build -trimpath --buildmode=plugin -o extensions/$PLUGIN_TYPE/$PLUGIN_NAME/$PLUGIN_NAME@$VERSION.so extensions/$PLUGIN_TYPE/$PLUGIN_NAME/*.go
+            go build -gcflags="all=-N -l" --buildmode=plugin -o extensions/$PLUGIN_TYPE/$PLUGIN_NAME/$PLUGIN_NAME@$VERSION.so extensions/$PLUGIN_TYPE/$PLUGIN_NAME/*.go
             ;;
     esac
 }
 
 pre
 build
-post
+#post

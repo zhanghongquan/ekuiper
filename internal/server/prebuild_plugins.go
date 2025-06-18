@@ -17,7 +17,7 @@
 package server
 
 var (
-	NativeSourcePlugin   = []string{"random", "zmq", "sql", "video", "kafka"}
+	NativeSourcePlugin   = []string{"random", "zmq", "sql", "video", "kafka", "pulsar"}
 	NativeSinkPlugin     = []string{"image", "influx", "influx2", "zmq", "kafka", "sql"}
 	NativeFunctionPlugin = []string{"accumulateWordCount", "countPlusOne", "echo", "geohash", "image", "labelImage", "tfLite"}
 )

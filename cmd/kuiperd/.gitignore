@@ -1,0 +1,8 @@
+/data/
+/etc/
+/logs/
+/log/
+/plugins/
+/tmp/
+*~
+__debug_bin*

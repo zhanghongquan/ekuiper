@@ -1,0 +1,139 @@
+{
+    "about": {
+        "trial": false,
+        "author": {
+            "name": "hongquan",
+            "email": "zhanghongquan@outlook.com",
+            "company": "personal",
+            "website": "https://www.github.com/zhanghongquan"
+        },
+        "helpUrl": {
+            "en_US": "https://ekuiper.org/docs/en/latest/guide/sources/plugin/pulsar.html",
+            "zh_CN": "https://ekuiper.org/docs/zh/latest/guide/sources/plugin/pulsar.html"
+        },
+        "description": {
+            "en_US": "This a source for Pulsar, it can be used for consume Pulsar message.",
+            "zh_CN": "pulsar source插件"
+        }
+    },
+    "libs": [
+        "github.com/apache/pulsar-client-go@v0.15.1"
+    ],
+    "properties": {
+        "default": [
+            {
+                "name": "url",
+                "default": "pulsar://127.0.0.1:6650",
+                "optional": false,
+                "control": "text",
+                "type": "string",
+                "hint": {
+                    "en_US": "The url of the Pulsar broker/proxy",
+                    "zh_CN": "Pulsar broker/proxy 的 URL"
+                },
+                "label": {
+                    "en_US": "broker/proxy url ",
+                    "zh_CN": "broker/proxy url"
+                }
+            },
+            {
+                "name": "token",
+                "default": "",
+                "optional": true,
+                "control": "text",
+                "type": "string",
+                "hint": {
+                    "en_US": "access token issued by pulsar",
+                    "zh_CN": "pulsar 的 access token"
+                },
+                "label": {
+                    "en_US": "access token",
+                    "zh_CN": "access token"
+                }
+            },
+            {
+                "name": "topic",
+                "default": "",
+                "optional": true,
+                "control": "text",
+                "type": "string",
+                "hint": {
+                    "en_US": "topic of pulsar consumer, delimited by ; if multiple",
+                    "zh_CN": "pulsar 消费的 topic, 多个 topic 用 ; 分隔"
+                },
+                "label": {
+                    "en_US": "topic",
+                    "zh_CN": "pulsar消费topic"
+                }
+            },
+            {
+                "name": "regex_topic",
+                "default": "",
+                "optional": true,
+                "control": "text",
+                "type": "string",
+                "hint": {
+                    "en_US": "regex topic of pulsar consumer",
+                    "zh_CN": "正则表达式匹配的 topic"
+                },
+                "label": {
+                    "en_US": "regex topic",
+                    "zh_CN": "正则表达式匹配的 topic"
+                }
+            },
+            {
+                "name": "consumer_name",
+                "default": "",
+                "optional": false,
+                "control": "text",
+                "type": "string",
+                "hint": {
+                    "en_US": "consumer name of pulsar consumer",
+                    "zh_CN": "pulsar 消费的 consumer name"
+                },
+                "label": {
+                    "en_US": "consumer name",
+                    "zh_CN": "pulsar消费consumer name"
+                }
+            },
+            {
+                "name": "subscription_name",
+                "default": "",
+                "optional": false,
+                "control": "text",
+                "type": "string",
+                "hint": {
+                    "en_US": "subscription name of pulsar consumer",
+                    "zh_CN": "pulsar 消费的 subscription name"
+                },
+                "label": {
+                    "en_US": "subscription name",
+                    "zh_CN": "pulsar消费subscription name"
+                }
+            },
+            {
+                "name": "subscription_type",
+                "default": "exclusive",
+                "optional": false,
+                "control": "text",
+                "type": "string",
+                "hint": {
+                    "en_US": "subscription type, can be one of: exclusive, shared, failover, key_shared",
+                    "zh_CN": "pulsar 消费的 subscription type, 可以是 exclusive, shared, failover, key_shared"
+                },
+                "label": {
+                    "en_US": "subscription type",
+                    "zh_CN": "pulsar消费subscription type"
+                }
+            }
+        ]
+    },
+    "node": {
+        "category": "source",
+        "icon": "iconPath",
+        "label": {
+            "en": "Pulsar",
+            "zh": "Pulsar"
+        }
+    }
+}

@@ -4,5 +4,6 @@ toolchain go1.23.4
 
 use (
 	.
+	./contract
 	./tools/kubernetes
 )
